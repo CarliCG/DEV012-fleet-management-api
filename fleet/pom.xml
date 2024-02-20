@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.2</version> <!-- Cambiado a la versión correcta de Spring Boot -->
+		<version>3.2.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fleetmanagementAPI</groupId>
@@ -14,7 +14,7 @@
 	<name>fleet</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version> <!-- Cambiado a una versión válida de Java -->
+		<java.version>21</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -26,13 +26,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- Agrega la dependencia de springfox-swagger2
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.9.2</version>
-		</dependency>-->
-
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -43,7 +36,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- No es necesario springdoc-openapi-starter-webmvc-ui, ya que estás usando springfox-swagger2 -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
