@@ -23,10 +23,10 @@ public class TaxiController {
     private TrajectoriesService trajectoriesService;
 
     @GetMapping("/taxis")
-    public List<Taxi> getAllTaxis(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size) {
+    public Page<Taxi> getAllTaxis(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<Taxi> result = taxiService.getAllTaxis(pageable);
-        return result.getContent();
-            }
+        return taxiService.getAllTaxis(pageable);
+
+    }
 
 }
