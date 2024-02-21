@@ -9,10 +9,10 @@ import jakarta.persistence.Table;
 public class Taxi {
 
     @Id
-    private Integer id;
+    private Long id;
     private String plate;
 
-    public Taxi(Integer id, String plate) {
+    public Taxi(Long id, String plate) {
         this.id = id;
         this.plate = plate;
     }
@@ -20,11 +20,11 @@ public class Taxi {
     public Taxi() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
