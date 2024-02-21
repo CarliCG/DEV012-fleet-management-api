@@ -1,6 +1,7 @@
 package com.fleetmanagementAPI.fleet.controllers;
 import com.fleetmanagementAPI.fleet.entities.Taxi;
 import com.fleetmanagementAPI.fleet.services.TaxiService;
+import com.fleetmanagementAPI.fleet.services.TrajectoriesService;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,11 +19,14 @@ public class TaxiController {
 
     @Autowired
     private TaxiService taxiService;
+    @Autowired
+    private TrajectoriesService trajectoriesService;
 
     @GetMapping("/taxis")
     public List<Taxi> getAllTaxis(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<Taxi> result = taxiService.getAllTaxis(pageable);
         return result.getContent();
-    }
+            }
+
 }
