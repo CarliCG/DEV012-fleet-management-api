@@ -12,6 +12,7 @@ import java.sql.Timestamp;
 
 @Repository
 public interface TrajectoriesRepository extends PagingAndSortingRepository<Trajectories, Long> {
+    //definir consultas personalizadas en el repositorio de Spring Data JPA
     @Query(value="SELECT * FROM trajectories WHERE taxi_id = :taxiId AND TO_CHAR(date, 'DD-MM-YYYY') = :date",nativeQuery = true)
     Page<Trajectories> findTrajectoriesByTaxiIdAndDate(int taxiId, String date, Pageable pageable);
 }
