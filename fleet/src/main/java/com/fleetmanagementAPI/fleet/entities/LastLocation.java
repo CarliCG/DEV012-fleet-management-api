@@ -1,6 +1,5 @@
 package com.fleetmanagementAPI.fleet.entities;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,6 +19,13 @@ public class LastLocation {
     private double longitude;
 
     public LastLocation() {
+    }
+
+    public LastLocation(int taxiId, Timestamp date, double latitude, double longitude) {
+        this.taxiId = taxiId;
+        this.date = date;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public int getId() {

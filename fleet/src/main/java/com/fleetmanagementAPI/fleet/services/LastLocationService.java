@@ -13,7 +13,8 @@ public class LastLocationService {
     @Autowired
     private LastLocationRepository lastLocationRepository;
 
-    public List<LastLocation> getLastLocation(Pageable pageable) {
-        return lastLocationRepository.findLastLocationForAllTaxis(pageable);
+    public List<LastLocation> getLastLocation() {
+        return lastLocationRepository.findLastLocationForAllTaxis();
     }
 }
+

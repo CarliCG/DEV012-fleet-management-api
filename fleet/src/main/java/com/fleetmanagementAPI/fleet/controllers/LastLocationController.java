@@ -19,9 +19,8 @@ public class LastLocationController {
     }
 
     @GetMapping("/lastLocation")
-    public List<LastLocation> getLastLocation(Pageable pageable){
-        // Configura el tamaño de la página para ser 10 elementos
-        pageable = PageRequest.of(pageable.getPageNumber(), 10);
-        return (List<LastLocation>) lastLocationService.getLastLocation(pageable);
+    public List<LastLocation> getLastLocation(){
+        return lastLocationService.getLastLocation();
     }
 }
+
